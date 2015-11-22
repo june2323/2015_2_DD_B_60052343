@@ -1,14 +1,61 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page language= "java" contentType ="text/html; charset=UTF-8" pageEncoding ="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import ="java.util.*,com.delab.mju.*" %>
+
 <html>
 <head>
-	<title>Home</title>
+
+<title>결과창</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
+<table>
+     <tr>
+         <td width="50px" align="center">name</td>
+         <td align="center">email</td>
+         <td align="center">phone</td>
+         <td align="center">position</td>
+     </tr>
+     <!-- result는 contoller의 addObject로 부터 가져온다. -->
+     <c:forEach items="${result}" var="emp">
+         <tr>
+             <td>${emp._name}</td>
+             <td>${emp._email}</td>
+             <td>${emp._phone}</td> 
+             <td>${emp._position_number}</td>    
+         </tr>
+     </c:forEach>
+ </table>
+ 
+ <table>
+     <tr>
+         <td width="50px" align="center">number</td>
+         <td align="center">name</td>
+      
+     </tr>
+     <!-- result는 contoller의 addObject로 부터 가져온다. -->
+     <c:forEach items="${result2}" var="po">
+         <tr>
+             <td>${po._position_number}</td>
+             <td>${po._position_name}</td>
 
-<P>  The time on the server is ${serverTime}. </P>
+         </tr>
+     </c:forEach>
+ </table>
+ 
+  <table>
+     <tr>
+         <td width="50px" align="center">number</td>
+         <td align="center">name</td>
+      
+     </tr>
+     <!-- result는 contoller의 addObject로 부터 가져온다. -->
+     <c:forEach items="${result3}" var="de">
+         <tr>
+             <td>${de._dept_number}</td>
+             <td>${de._dept_name}</td>
+
+         </tr>
+     </c:forEach>
+ </table>
 </body>
 </html>

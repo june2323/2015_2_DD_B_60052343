@@ -1,14 +1,27 @@
+<%@ page language= "java" contentType ="text/html; charset=UTF-8" pageEncoding ="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+
 <html>
 <head>
-	<title>Home</title>
+
+<title>결과창</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
-
-<P>  The time on the server is ${serverTime}. </P>
-</body>
+ 
+<table>
+     <tr>
+         <td width="50px" align="center">id</td>
+         <td align="center">email</td>
+         <td align="center">phone</td>
+     </tr>
+    
+     <c:forEach  items="${result}" var="member">
+         <tr>
+             <td>${member._name}</td>
+             <td>${member._email}</td>
+             <td>${member._phone}</td>    
+         </tr>
+     </c:forEach>
+ </table>
+ </body>
 </html>

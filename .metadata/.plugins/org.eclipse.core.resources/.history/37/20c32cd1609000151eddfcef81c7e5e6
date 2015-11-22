@@ -1,0 +1,15 @@
+<%@ page language= "java" contentType ="text/html; charset=UTF-8" pageEncoding ="UTF-8"%>
+
+<%@ page import ="java.util.*,com.delab.mju.*" %>
+
+<html>
+<head>
+
+<title>결과창</title>
+</head>
+<body>
+ <% for(int i=0; i<3; i++) {%>
+ ${result[i]._name}
+ <%}%>
+ </body>
+</html>

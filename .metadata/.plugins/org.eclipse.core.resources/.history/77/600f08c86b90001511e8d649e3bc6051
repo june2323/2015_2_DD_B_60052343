@@ -1,0 +1,11 @@
+package com.delab.mju;
+import java.util.ArrayList;
+
+import com.delab.mju.Member;
+ 
+public interface employeeMapper {
+    ArrayList<employee> getemployee();
+    void insertemployee(employee member);
+    void updateemployee(int emp_number);
+    void deleteemployee(int emp_number);
+}

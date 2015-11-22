@@ -1,0 +1,12 @@
+package com.delab.mju;
+
+import java.util.ArrayList;
+
+public interface employeeDAO {
+ 
+    public ArrayList<employee> getemployee();
+    public void insertMember(employee employee);
+    public void updateMember(String name);
+    public void deleteMember(String name);
+ 
+}

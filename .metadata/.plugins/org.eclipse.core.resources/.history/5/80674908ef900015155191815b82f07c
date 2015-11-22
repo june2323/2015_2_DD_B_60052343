@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.delab.mju.employeeMapper">
+ <!-- employee 부분 -->
+    <resultMap type="employee" id="employeeResultMap">
+        <result property="_emp_number" column="emp_number" />
+        <result property="_user_id" column="user_id" />
+        <result property="_user_password" column="user_password" />
+        <result property="_name" column="name" />
+        <result property="_SSN" column="SSN" />
+        <result property="_email" column="email" />
+        <result property="_phone" column="phone" />
+        <result property="_dept_number" column="dept_number" />
+        <result property="_final_a_a" column="final_a_a" />
+        <result property="_gender" column="gender" />
+        <result property="_since" column="since" />
+        <result property="_career" column="career" />
+        <result property="_position_number" column="position_number" />
+        <result property="_salary" column="salary" />
+        <result property="_access_control" column="access_control" />
+    </resultMap>
+ 
+    <!-- id의 경우에는 Mapper.java에 동일하게 사용해야된다. -->
+    <select id="getemployee" resultMap="employeeResultMap">
+        SELECT * FROM employee
+    </select>
+    
+    <!-- parameterType 에는 구문에 전달될 파라미터의 패키지 경로를 포함한 전체 클래명이나 별칭이 들어간다  -->
+    <insert id="insertemployee" parameterType="com.delab.mju.employee" >
+       
+    </insert>
+    
+    <!-- update와 delete는 생략한다. -->
+    <update id=""></update>
+    
+    <delete id="deleteemployee" parameterType="com.delab.mju.employee">
+      
+    </delete>
+    
+    <!-- positions 부분 -->
+        <resultMap type="positions" id="positionsResultMap">
+        <result property="_position_number" column="position_number" />
+        <result property="_position_name" column="position_name" />
+    </resultMap>
+ 
+    <!-- id의 경우에는 Mapper.java에 동일하게 사용해야된다. -->
+    <select id="getemployee" resultMap="employeeResultMap">
+        SELECT * FROM employee
+    </select>
+    
+    <!-- parameterType 에는 구문에 전달될 파라미터의 패키지 경로를 포함한 전체 클래명이나 별칭이 들어간다  -->
+    <insert id="insertemployee" parameterType="com.delab.mju.employee" >
+       
+    </insert>
+    
+    <!-- update와 delete는 생략한다. -->
+    <update id=""></update>
+    
+    <delete id="deleteemployee" parameterType="com.delab.mju.employee">
+      
+    </delete>
+ 
+</mapper>

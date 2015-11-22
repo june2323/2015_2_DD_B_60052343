@@ -8,6 +8,6 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_60"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;C:\Users\USER\Desktop\2015-2\데이터베이스 설계\2015_2_DD_B_60052343\.metadata\.plugins\org.eclipse.wst.server.core\tmp0&quot; -Dcatalina.home=&quot;C:\Program Files\Apache Software Foundation\Tomcat 8.0&quot; -Dwtp.deploy=&quot;C:\Users\USER\Desktop\2015-2\데이터베이스 설계\2015_2_DD_B_60052343\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps&quot; -Djava.endorsed.dirs=&quot;C:\Program Files\Apache Software Foundation\Tomcat 8.0\endorsed&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;C:\Users\USER\Desktop\2015-2\데이터베이스 설계\2015_2_DD_B_60052343\.metadata\.plugins\org.eclipse.wst.server.core\tmp0&quot; -Dcatalina.home=&quot;C:\Program Files\Apache Software Foundation\Tomcat 8.0&quot; -Dwtp.deploy=&quot;C:\Users\USER\Desktop\2015-2\데이터베이스 설계\2015_2_DD_B_60052343&quot; -Djava.endorsed.dirs=&quot;C:\Program Files\Apache Software Foundation\Tomcat 8.0\endorsed&quot;"/>
 <stringAttribute key="server-id" value="Tomcat v8.0 Server at localhost"/>
 </launchConfiguration>

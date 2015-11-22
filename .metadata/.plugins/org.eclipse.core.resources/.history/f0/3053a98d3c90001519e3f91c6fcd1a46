@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd" >
+
+<configuration>
+    <mappers >
+        <mapper resource ="/mybatis/Mapper.xml"/>
+    </mappers >
+</configuration>
+[출처] 쉽게하자 STS - Spring Tool Suite + mysql + mybatis + tomcat|작성자 shinkiki

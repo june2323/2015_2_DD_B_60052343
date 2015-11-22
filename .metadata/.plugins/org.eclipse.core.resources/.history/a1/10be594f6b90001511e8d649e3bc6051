@@ -1,0 +1,44 @@
+package com.delab.mju;
+
+public class employee {
+    private int _emp_number;
+    private String _user_id;
+    private String _password;
+    private String _name;
+    private String _SSN;
+    private String _email;
+    private String _phone;
+    private int _dept_number;
+    private String _final_a_a;
+    private String _gender;
+    private String _since;
+    private String _career;
+    private int _position_number;
+    private int _salary;
+    private int _access_control;
+    
+    public String get_name() {
+        return _name;
+    }
+ 
+    public void set_name(String _name) {
+        this._name = _name;
+    }
+ 
+    public String get_email() {
+        return _email;
+    }
+ 
+    public void set_email(String _email) {
+        this._email = _email;
+    }
+ 
+    public String get_phone() {
+        return _phone;
+    }
+ 
+    public void set_phone(String _phone) {
+        this._phone = _phone;
+    }
+ 
+}//end of class
