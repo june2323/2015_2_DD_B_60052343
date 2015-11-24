@@ -82,4 +82,52 @@ public class DAOService implements DAO {
     public void deletedepartment(int dept_number){
     	
     }
+    
+    // retire 부분
+    @Override
+    public ArrayList<retire> getretire(){
+    	ArrayList<retire> result = new ArrayList<retire>();
+        //sqlSession을 통하여 매핑한다.
+        Mapper Mapper = sqlSession.getMapper(Mapper.class);
+        //getMember()의 메소드명과 mapper.mxl과 id는 동일해야한다.
+        result = Mapper.getretire();
+        
+    	return result;
+    }
+    @Override
+    public void insertretire(retire retire){
+    	
+    }
+    @Override
+    public void updateretire(int emp_number){
+    	
+    }
+    @Override
+    public void deleteretire(int emp_number){
+    	
+    }
+    
+    // tech 부분
+    @Override
+    public ArrayList<own_technical_content> gettech(){
+    	ArrayList<own_technical_content> result = new ArrayList<own_technical_content>();
+        //sqlSession을 통하여 매핑한다.
+        Mapper Mapper = sqlSession.getMapper(Mapper.class);
+        //getMember()의 메소드명과 mapper.mxl과 id는 동일해야한다.
+        result = Mapper.gettech();
+        
+    	return result;
+    }
+    @Override
+    public void inserttech(own_technical_content tech){
+    	
+    }
+    @Override
+    public void updatetech(int emp_number, String tech_con_name){
+    	
+    }
+    @Override
+    public void deletetech(int emp_number, String tech_con_name){
+    	
+    }
 }

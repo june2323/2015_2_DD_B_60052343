@@ -1,0 +1,31 @@
+package com.delab.mju;
+
+public class own_technical_content {
+    private int _emp_number;
+    private String tech_con_name;
+    private String level;
+    
+	public int get_emp_number() {
+		return _emp_number;
+	}
+	public void set_emp_number(int _emp_number) {
+		this._emp_number = _emp_number;
+	}
+	public String getTech_con_name() {
+		return tech_con_name;
+	}
+	public void setTech_con_name(String tech_con_name) {
+		this.tech_con_name = tech_con_name;
+	}
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
+    
+	
+    
+	
+
+}//end of class

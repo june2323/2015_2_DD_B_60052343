@@ -62,6 +62,27 @@
         SELECT * FROM department
     </select>
     
+        <!-- retire 부분 -->
+    <resultMap type="retire" id="retireResultMap">
+        <result property="_emp_number" column="emp_number" />
+        <result property="_retire_day" column="retire_day" />
+    </resultMap>
+    
+    <select id="getretire" resultMap="retireResultMap">
+        SELECT * FROM retire
+    </select>
+    
+     <!-- tech 부분 -->
+    <resultMap type="own_technical_content" id="techResultMap">
+        <result property="_emp_number" column="emp_number" />
+        <result property="_tech_con_name" column="tech_con_name" />
+        <result property="_level" column="level" />
+    </resultMap>
+    
+    <select id="gettech" resultMap="techResultMap">
+        SELECT * FROM own_technical_content
+    </select>
+    
   
   
     

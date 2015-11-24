@@ -1,0 +1,9 @@
+package com.delab.mju;
+
+public class retire {
+    private int _emp_number;
+    private String _position_name;
+    
+	
+
+}//end of class

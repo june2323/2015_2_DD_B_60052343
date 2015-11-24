@@ -73,6 +73,9 @@ public class HomeController {
         List<department> departmentList = DAOService.getdepartment();
         result.addObject("result3", departmentList);
         
+        List<own_technical_content> tech = DAOService.gettech();
+        result.addObject("result4", tech);
+        
         result.setViewName("home");
         return result;
     }
