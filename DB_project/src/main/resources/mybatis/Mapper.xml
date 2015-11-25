@@ -28,6 +28,10 @@
         SELECT * FROM employee
     </select>
     
+    <select id="selectidpwd" resultMap="employeeResultMap">
+        SELECT * FROM employee where user_id = #{user_id}
+    </select>
+    
     <!-- parameterType 에는 구문에 전달될 파라미터의 패키지 경로를 포함한 전체 클래명이나 별칭이 들어간다  -->
     <insert id="insertemployee" parameterType="com.delab.mju.employee" >
        
@@ -83,7 +87,47 @@
         SELECT * FROM own_technical_content
     </select>
     
-  
+    
+  	<!-- project 부분 -->
+    <resultMap type="project" id="projectResultMap">
+        <result property="_project_number" column="project_number" />
+        <result property="_project_name" column="project_name" />
+        <result property="_project_since" column="project_since" />
+        <result property="_project_end" column="project_end" />
+        <result property="_client" column="client" />
+    </resultMap>
+   
+    <select id="getproject" resultMap="projectResultMap">
+        SELECT * FROM project
+    </select>
+    
+   
+    
+    
+    <!-- join_project 부분 -->
+    <resultMap type="join_project" id="join_projectResultMap">
+        <result property="_project_number" column="project_number" />
+        <result property="_emp_number" column="emp_number" />
+        <result property="_role_number" column="role_number" />
+        <result property="_join_since" column="join_since" />
+        <result property="_join_end" column="join_end" />
+    </resultMap>
+   
+    <select id="getjoin_project" resultMap="join_projectResultMap">
+        SELECT * FROM join_project
+    </select>    
+      
+    <!-- role 부분 -->
+    <resultMap type="role" id="roleResultMap">
+        <result property="_role_number" column="role_number" />
+        <result property="_role_name" column="role_name" />
+    </resultMap>
+   
+    <select id="getrole" resultMap="roleResultMap">
+        SELECT * FROM role
+    </select>
+    
+   
   
     
  

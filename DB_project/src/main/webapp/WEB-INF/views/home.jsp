@@ -2,77 +2,53 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import ="java.util.*,com.delab.mju.*" %>
 
+
+<!DOCTYPE html>
 <html>
 <head>
-
-<title>결과창</title>
+	<meta charset="UTF-8">
+	<title>로그인</title>
+	<link href="<c:url value="/css/mobile_login.css"/>" rel="stylesheet">
+	<script src="<c:url value="/js/jquery-1.8.2.min.js" /> "></script>
+	 <meta name="viewPort" content="initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scale=no;" />
 </head>
 <body>
-<table>
-     <tr>
-         <td width="50px" align="center">name</td>
-         <td align="center">email</td>
-         <td align="center">phone</td>
-         <td align="center">position</td>
-     </tr>
-     <!-- result는 contoller의 addObject로 부터 가져온다. -->
-     <c:forEach items="${result}" var="emp">
-         <tr>
-             <td>${emp._name}</td>
-             <td>${emp._email}</td>
-             <td>${emp._phone}</td> 
-             <td>${emp._position_number}</td>    
-         </tr>
-     </c:forEach>
- </table>
- 
- <table>
-     <tr>
-         <td width="50px" align="center">number</td>
-         <td align="center">name</td>
-      
-     </tr>
-     <!-- result는 contoller의 addObject로 부터 가져온다. -->
-     <c:forEach items="${result2}" var="po">
-         <tr>
-             <td>${po._position_number}</td>
-             <td>${po._position_name}</td>
+<div class ="vCenter">
 
-         </tr>
-     </c:forEach>
- </table>
- 
-  <table>
-     <tr>
-         <td width="50px" align="center">number</td>
-         <td align="center">name</td>
-      
-     </tr>
-     <!-- result는 contoller의 addObject로 부터 가져온다. -->
-     <c:forEach items="${result3}" var="de">
-         <tr>
-             <td>${de._dept_number}</td>
-             <td>${de._dept_name}</td>
+ <div class="center">
+	  <div>
+		  <form class="form-horizontal"action="./check" method="post">
+			<fieldset>
+        <legend class="legend">로그인</legend>
+				<div class="control-group">
+					<div class="controls">
+						아이디 입력
+					</div>
+					<div class="controls">
+						<input type="text" name="userid" id="userid">
+					</div>
+				</div>
+				<div class="control-group">
+											<div class="controls">
+						비밀번호 입력
+					</div>
+						<div class="controls">
+							<input type="password" name="pwd" id="pwd">
+						</div>
+					</div>
+				<div class="form-actions">
+					
+						<input type="submit" class="btn btn-primary" value="로그인">
+				</div>
+				${message}
+			</fieldset>
+			
+		  </form>
+    </div>
+  </div>
 
-         </tr>
-     </c:forEach>
- </table>
- 
-   <table>
-     <tr>
-         <td width="50px" align="center">emp_number</td>
-         <td align="center">기술명</td>
-         <td align="center">등급</td>
-      
-     </tr>
-     <!-- result는 contoller의 addObject로 부터 가져온다. -->
-     <c:forEach items="${result4}" var="tech">
-         <tr>
-             <td>${tech._emp_number}</td>
-             <td>${tech._tech_con_name}</td>
-			 <td>${tech._level}</td>
-         </tr>
-     </c:forEach>
- </table>
+  
+  </div>
+  
 </body>
 </html>

@@ -1,27 +1,22 @@
 package com.delab.mju;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
-import java.sql.*;
-import java.util.*;
-
-
-import org.apache.ibatis.session.SqlSession;
+import org.junit.runner.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 /**
@@ -76,10 +71,43 @@ public class HomeController {
         List<own_technical_content> tech = DAOService.gettech();
         result.addObject("result4", tech);
         
+        List<project> projectList = DAOService.getproject();
+        result.addObject("result5", projectList);
+        
+        List<join_project> join_projectList = DAOService.getjoin_project();
+        result.addObject("result6", join_projectList);
+        
+        List<role> roleList = DAOService.getrole();
+        result.addObject("result7", roleList);
+        
         result.setViewName("home");
         return result;
     }
     
+	 @RequestMapping(value = "/check", method = RequestMethod.POST)
+	    public String checkID(HttpServletRequest request, RedirectAttributes redirectAttributes) {
+	        String user_id = request.getParameter("userid");
+	        String user_password = request.getParameter("pwd");
+
+	        employee employee = DAOService.selectidpwd(user_id);
+	      
+	        
+	        if(employee == null)
+	        {
+		        redirectAttributes.addFlashAttribute("message", "아이디가 틀렸습니다.");
+		        return "redirect:/";
+	        }
+	        else if (user_password.equals(employee.get_user_password()))
+	        {
+	        	return "insa";
+	        }
+	        else
+	        {
+	        	redirectAttributes.addFlashAttribute("message", "비밀번호가 틀렸습니다.");
+		        return "redirect:/";
+	        
+	        }
+	    }
     
     
     

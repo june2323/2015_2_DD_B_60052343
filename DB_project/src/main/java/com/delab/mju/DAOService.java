@@ -35,6 +35,17 @@ public class DAOService implements DAO {
     public void deleteemployee(int emp_number) {
     
     }
+    @Override
+    public employee selectidpwd(String user_id)
+    {
+    	employee result = new employee();
+        //sqlSession을 통하여 매핑한다.
+        Mapper Mapper = sqlSession.getMapper(Mapper.class);
+        //getMember()의 메소드명과 mapper.mxl과 id는 동일해야한다.
+        result = Mapper.selectidpwd(user_id);
+        
+        return result;
+    }
  // positions 부분
     @Override
     public ArrayList<positions> getpositions(){
@@ -130,4 +141,78 @@ public class DAOService implements DAO {
     public void deletetech(int emp_number, String tech_con_name){
     	
     }
+    
+	@Override
+	public ArrayList<project> getproject() {
+		
+	    ArrayList<project> result = new ArrayList<project>();
+        Mapper Mapper = sqlSession.getMapper(Mapper.class);
+        result = Mapper.getproject();
+        
+        return result;
+	}
+	@Override
+	public void insertproject(project project) {
+		Mapper Mapper = sqlSession.getMapper(Mapper.class);
+    	Mapper.insertproject(project);
+		
+	}
+	@Override
+	public void updateproject(int project_number) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void deleteproject(int project_number) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public ArrayList<join_project> getjoin_project() {
+		 ArrayList<join_project> result = new ArrayList<join_project>();
+	        Mapper Mapper = sqlSession.getMapper(Mapper.class);
+	        result = Mapper.getjoin_project();
+	        
+	        return result;
+	}
+	@Override
+	public void insertjoin_project(join_project join_project) {
+		Mapper Mapper = sqlSession.getMapper(Mapper.class);
+    	Mapper.insertjoin_project(join_project);
+		
+	}
+	@Override
+	public void updatejoin_project(int project_number, int emp_number) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void deletejoin_project(int project_number, int emp_number) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public ArrayList<role> getrole() {
+		 ArrayList<role> result = new ArrayList<role>();
+	        Mapper Mapper = sqlSession.getMapper(Mapper.class);
+	        result = Mapper.getrole();
+	        
+	        return result;
+	}
+	@Override
+	public void insertrole(role role) {
+		Mapper Mapper = sqlSession.getMapper(Mapper.class);
+    	Mapper.insertrole(role);
+		
+	}
+	@Override
+	public void updaterole(int role_number) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void deleterole(int role_number) {
+		// TODO Auto-generated method stub
+		
+	}
 }

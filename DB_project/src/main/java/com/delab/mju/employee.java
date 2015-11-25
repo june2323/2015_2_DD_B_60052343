@@ -29,10 +29,10 @@ public class employee {
 	public void set_user_id(String _user_id) {
 		this._user_id = _user_id;
 	}
-	public String get_password() {
+	public String get_user_password() {
 		return _user_password;
 	}
-	public void set_password(String _user_password) {
+	public void set_user_password(String _user_password) {
 		this._user_password = _user_password;
 	}
 	public String get_name() {
