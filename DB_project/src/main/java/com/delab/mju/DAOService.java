@@ -69,6 +69,17 @@ public class DAOService implements DAO {
     public void deletepositions(int position_number){
     	
     }
+    @Override
+    public positions selectposition(int position_number)
+    {
+    	positions result = new positions();
+        //sqlSession을 통하여 매핑한다.
+        Mapper Mapper = sqlSession.getMapper(Mapper.class);
+        //getMember()의 메소드명과 mapper.mxl과 id는 동일해야한다.
+        result = Mapper.selectposition(position_number);
+        
+        return result;
+    }
     
     // department 부분
     @Override
@@ -92,6 +103,17 @@ public class DAOService implements DAO {
     @Override
     public void deletedepartment(int dept_number){
     	
+    }
+    @Override
+    public department selectdepartment(int dept_number)
+    {
+    	department result = new department();
+        //sqlSession을 통하여 매핑한다.
+        Mapper Mapper = sqlSession.getMapper(Mapper.class);
+        //getMember()의 메소드명과 mapper.mxl과 id는 동일해야한다.
+        result = Mapper.selectdepartment(dept_number);
+        
+    	return result;
     }
     
     // retire 부분

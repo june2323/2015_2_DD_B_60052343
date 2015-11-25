@@ -55,6 +55,10 @@
         SELECT * FROM positions
     </select>
     
+    <select id="selectposition" resultMap="positionsResultMap">
+        SELECT * FROM positions where position_number = #{position_number}
+    </select>
+    
     
         <!-- department 부분 -->
     <resultMap type="department" id="departmentResultMap">
@@ -64,6 +68,10 @@
     
     <select id="getdepartment" resultMap="departmentResultMap">
         SELECT * FROM department
+    </select>
+    
+    <select id="selectdepartment" resultMap="departmentResultMap">
+        SELECT * FROM department where dept_number = #{dept_number}
     </select>
     
         <!-- retire 부분 -->

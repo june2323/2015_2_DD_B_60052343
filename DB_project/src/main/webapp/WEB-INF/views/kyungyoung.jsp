@@ -16,11 +16,8 @@
 	<div class="vCenter">
 	<h2>${dept_name} 부서의 ${name} ${position_name}님 안녕하세요</h2>
 		<div class="center">
-			<a href="login.jsp" class="btn btn-mini">프로젝트 인원관리</a><br/>
-			<a href="login.jsp" class="btn btn-mini">고객평가 등록</a><br/>
+			<a href="login.jsp" class="btn btn-mini">프로젝트 관리</a><br/>
 			<a href="login.jsp" class="btn btn-mini">직원 검색</a><br/>
-			<a href="login.jsp" class="btn btn-mini">직원 등록</a><br/>
-			<a href="login.jsp" class="btn btn-mini">직원 수정</a><br/>
 			<a href="login.jsp" class="btn btn-mini">내정보 수정</a><br/>
 		</div>
  	 </div>

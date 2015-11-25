@@ -21,11 +21,13 @@ public interface Mapper {
     void insertpositions(positions positions);
     void updatepositions(int position_number);
     void deletepositions(int position_number);
+    positions selectposition(int position_number);
     
     public ArrayList<department> getdepartment();
     public void insertdepartment(department department);
     public void updatedepartment(int dept_number);
     public void deletedepartment(int dept_number);
+    department selectdepartment(int dept_number);
     
     public ArrayList<retire> getretire();
     public void insertretire(retire retire);

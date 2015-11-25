@@ -14,11 +14,13 @@ public interface DAO {
     public void insertpositions(positions positions);
     public void updatepositions(int position_number);
     public void deletepositions(int position_number);
+    public positions selectposition(int position_number);
     
     public ArrayList<department> getdepartment();
     public void insertdepartment(department department);
     public void updatedepartment(int dept_number);
     public void deletedepartment(int dept_number);
+    public department selectdepartment(int dept_number);
     
     public ArrayList<retire> getretire();
     public void insertretire(retire retire);

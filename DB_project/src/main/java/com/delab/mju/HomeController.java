@@ -85,8 +85,10 @@ public class HomeController {
     }
     
 	 @RequestMapping(value = "/check", method = RequestMethod.POST)
-	    public String checkID(HttpServletRequest request, RedirectAttributes redirectAttributes) {
-	        String user_id = request.getParameter("userid");
+	    public ModelAndView checkID(HttpServletRequest request, Model model) {
+		 
+		 ModelAndView result = new ModelAndView();
+		 String user_id = request.getParameter("userid");
 	        String user_password = request.getParameter("pwd");
 
 	        employee employee = DAOService.selectidpwd(user_id);
@@ -94,17 +96,42 @@ public class HomeController {
 	        
 	        if(employee == null)
 	        {
-		        redirectAttributes.addFlashAttribute("message", "아이디가 틀렸습니다.");
-		        return "redirect:/";
+	        	model.addAttribute("message", "아이디가 틀렸습니다." );
+	        	result.setViewName("home");
+		        return result;
 	        }
 	        else if (user_password.equals(employee.get_user_password()))
 	        {
-	        	return "insa";
+	        	String dept_name = DAOService.selectdepartment(employee.get_dept_number()).get_dept_name();
+        		String position_name = DAOService.selectposition(employee.get_position_number()).get_position_name();
+        		
+        		model.addAttribute("emp_number", employee.get_emp_number());
+        		model.addAttribute("dept_name", dept_name);
+        		model.addAttribute("position_name", position_name);
+        		model.addAttribute("name", employee.get_name());
+        		
+	        	if (employee.get_dept_number() == 100)
+	        	{
+	        		result.setViewName("kyungyoung");
+			        return result;
+	        	}
+	        	else if (employee.get_dept_number() == 200)
+	        	{
+	        		result.setViewName("insa");
+			        return result;
+	        	}
+	        	else
+	        	{
+	        		result.setViewName("nomal");
+			        return result;
+	        	}
+	        	
 	        }
 	        else
 	        {
-	        	redirectAttributes.addFlashAttribute("message", "비밀번호가 틀렸습니다.");
-		        return "redirect:/";
+	        	model.addAttribute("message", "비밀번호가 틀렸습니다." );
+	        	result.setViewName("home");
+		        return result;
 	        
 	        }
 	    }
